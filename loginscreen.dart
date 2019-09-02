@@ -7,9 +7,17 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  static TextStyle style = TextStyle(fontSize: 20.0, color: Colors.white);
-  
-  static TextField emailField = TextField(
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Welcome to Flutter',
+      home: LoginScreen(),
+    );
+  }
+
+  Widget LoginScreen(){
+    TextStyle style = TextStyle(fontSize: 20.0, color: Colors.white);
+    TextField emailField = TextField(
           obscureText: false,
           style: style,
           decoration: InputDecoration(
@@ -21,8 +29,7 @@ class MyApp extends StatelessWidget {
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
         );
-
-  static TextField passField = TextField(
+    TextField passField = TextField(
           obscureText: true,
           style: style,
           decoration: InputDecoration(
@@ -34,8 +41,7 @@ class MyApp extends StatelessWidget {
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
         );
-
-  static Material loginButton = Material(
+    Material loginButton = Material(
           //elevation: 1000.0,
           borderRadius: BorderRadius.circular(30.0),
           child: FlatButton(
@@ -48,16 +54,6 @@ class MyApp extends StatelessWidget {
             ),
           ),
           );
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: getLoginPage(),
-    );
-  }
-
-  Widget getLoginPage(){
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 15, 15, 40),
         appBar: AppBar(
