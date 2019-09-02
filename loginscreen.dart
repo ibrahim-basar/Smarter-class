@@ -53,7 +53,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Welcome to Flutter',
-      home: Scaffold(
+      home: getLoginPage(),
+    );
+  }
+
+  Widget getLoginPage(){
+    return Scaffold(
         backgroundColor: Color.fromARGB(255, 15, 15, 40),
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 50, 50, 125),
@@ -89,7 +94,6 @@ class MyApp extends StatelessWidget {
           ],
         ),
       )
-      ),
-    );
-  }
+      );
+  } // getLoginPage end
 }
