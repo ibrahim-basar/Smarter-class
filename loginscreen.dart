@@ -36,18 +36,18 @@ class MyApp extends StatelessWidget {
         );
 
   static Material loginButton = Material(
-          elevation: 100.0,
+          //elevation: 1000.0,
           borderRadius: BorderRadius.circular(30.0),
-          child: MaterialButton(
+          child: FlatButton(
             color: Color.fromARGB(100, 0, 0, 125),
             padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
             onPressed: () {},
             child: Text("Login",
-                textAlign: TextAlign.center,
-                style: style.copyWith(
-                    color: Colors.white, fontWeight: FontWeight.bold)),
+              textAlign: TextAlign.center,
+              style: style.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
           ),
-        );
+          );
 
   @override
   Widget build(BuildContext context) {
