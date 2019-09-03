@@ -2,8 +2,6 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -29,7 +27,7 @@ class MyApp extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-            GradesDisplay("TR 1S", 75, "MT 2", 86, "EN 2S", 47, "HS 3", 93, "GEO 2", 50, "IT", 13),
+            GradesDisplay("Turkish", 75, "Maths", 86, "English", 47, "History", 93, "Geography", 50, "IT", 13),
             SizedBox(height: 430)
             ]),
         ),
@@ -47,15 +45,19 @@ class MyApp extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           SizedBox(height: 20),
-          Text('Grades', style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold)),
-          SizedBox(height: 20),
+          Text('Grade Averages', style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold)),
+          SizedBox(height: 5),
+          Text('Tap on a subject for more information', style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w100)),
+          SizedBox(height: 10),
           Container(height: 3, width: 300, decoration: BoxDecoration(color: Colors.white)),
-          SizedBox(height: 30),
+          SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Container(width: 110, height: 70,
+              GestureDetector(
+                onTap: () => print("Subject 1"),
+              child: Container(width: 110, height: 70,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,9 +67,11 @@ class MyApp extends StatelessWidget {
                   Text(grade1.toString(), style: gradeStyle, textAlign: TextAlign.center)
                 ],
               )
+              )
               ),
               Container(color: Colors.white, height: 50, width: 1),
-              Container(width: 110, height: 70,
+              GestureDetector(onTap: () => print("Subject 2"),
+              child: Container(width: 110, height: 70,
                 child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,9 +81,11 @@ class MyApp extends StatelessWidget {
                   Text(grade2.toString(), style: gradeStyle, textAlign: TextAlign.center)
                 ],
               )
+              )
               ),
               Container(color: Colors.white, height: 50, width: 1),
-              Container(width: 110, height: 70,
+              GestureDetector(onTap: () => print("Subject 3"),
+              child: Container(width: 110, height: 70,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -88,6 +94,7 @@ class MyApp extends StatelessWidget {
                   SizedBox(height: 5),
                   Text(grade3.toString(), style: gradeStyle)
                 ],
+              )
               )
               )
             ],
@@ -99,7 +106,8 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Container(width: 110, height: 70,
+              GestureDetector(onTap: () => print("Subject 4"),
+              child: Container(width: 110, height: 70,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -109,9 +117,11 @@ class MyApp extends StatelessWidget {
                   Text(grade4.toString(), style: gradeStyle)
                 ],
               )
+              )
               ),
               Container(color: Colors.white, height: 50, width: 1),
-              Container(width: 110,
+              GestureDetector(onTap: () => print("Subject 5"),
+              child: Container(width: 110, height: 70,
                 child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -121,9 +131,11 @@ class MyApp extends StatelessWidget {
                   Text(grade5.toString(), style: gradeStyle, textAlign: TextAlign.center)
                 ],
               )
+              )
               ),
               Container(color: Colors.white, height: 50, width: 1),
-              Container(width: 110, height: 70,
+              GestureDetector(onTap: () => print("Subject 6"),
+              child: Container(width: 110, height: 70,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -132,6 +144,7 @@ class MyApp extends StatelessWidget {
                   SizedBox(height: 5),
                   Text(grade6.toString(), style: gradeStyle, textAlign: TextAlign.center)
                 ],
+              )
               )
               )
             ],
