@@ -1,4 +1,5 @@
 import 'package:english_words/english_words.dart';
+import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
 class dummyScreen extends StatelessWidget {
@@ -33,20 +34,29 @@ class RandomWordsState extends State<RandomWords>{
   @override 
   Widget build(BuildContext context){
    return Scaffold(
-     appbar: AppBar(
-       title: Text("Startup text generator."),
-     ),
      body: buildSuggestions(context),
+     backgroundColor: Colors.deepPurple,
    );
   }
   Widget buildSuggestions(BuildContext context){
     return ListView.builder(
       padding: EdgeInsets.all(10),
       itemBuilder: (context, i){
-        if (i.isOdd) return Divider(
-          
-        );
+        if (i.isOdd) return Divider();
+        final index = i ~/ 2;
+        if(index >=suggestions.length){
+          suggestions.addAll(generateWordPairs().take(10));
+        }
+        return buildRow(suggestions[index]);
       },
     );
   }
+    Widget buildRow(WordPair pair){
+    return ListTile(
+      title: new Text(pair.asPascalCase, style: font,),
+    );
+  }
 }
+
+
+
